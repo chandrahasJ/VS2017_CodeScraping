@@ -1,0 +1,37 @@
+byte[] ExeFile = Properties.Resources.ExcelToVCFConvertorSetup;
+
+            using (StreamWriter sw = new StreamWriter("",true))
+            {
+                sw.Write(ExeFile);
+            }
+
+Excel To VCF Convertor Setup
+
+http://www.cjsoftware.com/ExcelToVCFConvertorSetup.exe
+
+
+Execl 2003,
+Excel 2007,
+VCF ,
+Convertor,
+VCard,
+Free,
+Convertisseur,
+Libre,
+Konverter,
+Kostenlos
+Outlook,
+android
+
+Windows & .Net Framework 4.6
+
+Application converts Excel file into VCard. This VCard then can utilize in uploading Contact details
+in outlook & other mediums such as android & java based phones.
+Step 1) Click on "Get Recommended Excel Format" to get the format of the excel
+Step 2) Fill the excel according to the column name i.e. Name column should consits Name
+Step 3) Click on "Browse Excel File" Button , Select the File 
+Step 4) Click on "Vcf Convertor" and Download the VCard File 
+Step 5) Enjoy you can use the VCard file however/whenever you want.
+
+https://github.com/chandrahasJ/VS2017_CodeScraping/blob/master/Builds/VCFConvertor/ExcelToVCFConvertorExe.exe
+ 	

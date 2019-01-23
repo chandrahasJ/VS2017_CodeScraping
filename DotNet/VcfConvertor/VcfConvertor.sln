@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToVcfCardConvertor", "ExcelToVcfCardConvertor\ExcelToVcfCardConvertor.csproj", "{27B953AF-4FE2-4AB0-89AF-628B3718840C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ExcelToVCFConvertorSetup", "ExcelToVCFConvertorSetup\ExcelToVCFConvertorSetup.vdproj", "{B33231AE-52F3-448E-BF74-9EC6920C43D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelToVCFConvertorExe", "ExcelToVCFConvertorExe\ExcelToVCFConvertorExe.csproj", "{68619D30-3BFF-49AA-A371-E39990D12D87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27B953AF-4FE2-4AB0-89AF-628B3718840C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B953AF-4FE2-4AB0-89AF-628B3718840C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B953AF-4FE2-4AB0-89AF-628B3718840C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B953AF-4FE2-4AB0-89AF-628B3718840C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33231AE-52F3-448E-BF74-9EC6920C43D9}.Debug|Any CPU.ActiveCfg = Debug
+		{B33231AE-52F3-448E-BF74-9EC6920C43D9}.Release|Any CPU.ActiveCfg = Release
+		{68619D30-3BFF-49AA-A371-E39990D12D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68619D30-3BFF-49AA-A371-E39990D12D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68619D30-3BFF-49AA-A371-E39990D12D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68619D30-3BFF-49AA-A371-E39990D12D87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C54846C-1E65-4A54-89DC-7939A11E58BD}
+	EndGlobalSection
+EndGlobal
