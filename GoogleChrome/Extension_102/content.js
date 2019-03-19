@@ -1,45 +1,53 @@
 
 
-function createButtonAndAddit(appendDiv){
-    var div = document.createElement( 'div' );
-    var btnForm = document.createElement( 'form' );
-    var btn = document.createElement( 'input' );
+function createButtonAndAddit(){
 
-    //append all elements
-    document.body.appendChild( div );
-    div.appendChild( btnForm );
-    btnForm.appendChild( btn );
+    var getflightprintticket =  $(".flightprintticket");
 
-    //set attributes for div
-    div.id = 'myDivId';
-    div.style.cssText = "top:10%;left:10%;position:fixed;z-index:1000000000;"
-    div.style.backgroundColor = 'black';
+    console.log(getflightprintticket.length)
 
-    //set attributes for btnForm
-    btnForm.action = '';
+    for (let index = 0; index < getflightprintticket.length; index++) {
+        const element = getflightprintticket[index];
+        
+        var div = document.createElement( 'div' );
+        var btnForm = document.createElement( 'form' );
+        var btn = document.createElement( 'input' );
 
-    //set attributes for btn
-    //"btn.removeAttribute( 'style' );
-    btn.type = 'button';
-    btn.value = 'Get Data';
-    btn.style.position = 'absolute';
-    btn.style.top = '50%';
-    btn.style.left = '50%';
-    btn.addEventListener("click",sayHello);
+        //append all elements
+        $(element).after(div);
+        div.appendChild( btnForm );
+        btnForm.appendChild( btn );
+
+        //set attributes for div
+        div.id = 'myButtonDivID_'+index;
+        var _position = $(element).position();
+         
+        div.style.cssText = "left:"+(_position.left)+"top:"+(_position.top+100)+" position:absolute;z-index:1000000000;"
+        //div.style.cssText = "position:absolute;z-index:1000000000;"
+        div.style.backgroundColor = 'black';
+
+        //set attributes for btnForm
+        btnForm.action = '';
+
+        //set attributes for btn  
+        btn.id ="button_"+index;  
+        btn.type = 'button';
+        btn.value = 'Get Data';
+        btn.classList.add("statusconfirmed");
+        btn.classList.add("_GetDataBtn");
+        //btn.addEventListener("click",);
+        
+    } 
+    
 }
 
 
-function sayHello(){
-   
-}
 
 $(document).ready(function(){
-    var getDivCount = $("div");
-    console.log(getDivCount)    ;
-    var appendDiv = getDivCount.eq(12);
-    console.log(appendDiv)  
+    createButtonAndAddit();
 
-    
-    console.log($(appendDiv)[0])  
-    createButtonAndAddit(appendDiv);
+    $("._GetDataBtn").bind("click",function(e){
+        var _data = $("#"+e.target.id).closest(".flightdetails");
+        console.log(_data.html());
+    });
 });
