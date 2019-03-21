@@ -1,10 +1,8 @@
 
 
-function createButtonAndAddit(){
+function createButtonAndAddit_Akbar(){
 
     var getflightprintticket =  $(".flightprintticket");
-
-    console.log(getflightprintticket.length)
 
     for (let index = 0; index < getflightprintticket.length; index++) {
         const element = getflightprintticket[index];
@@ -44,10 +42,72 @@ function createButtonAndAddit(){
 
 
 $(document).ready(function(){
-    createButtonAndAddit();
+   
+    createButtonAndAddit_Akbar();
 
     $("._GetDataBtn").bind("click",function(e){
         var _data = $("#"+e.target.id).closest(".flightdetails");
-        console.log(_data.html());
-    });
+        var _MainParent = $("#"+e.target.id).parents("div > .rightitem");
+
+        var _Referenceno = $(".referenceno > strong > a").text();       
+        var _PNRNo = $(_MainParent).find('.itemheadersub > .mainheadright > .headernav:eq(0)').text().split("|")[1].split(":")[1];
+        var _AirlineID =  $(_MainParent).find('.airline > .item:eq(1)').html().split("<br>")[0];
+        var _AirlineName =  $(_MainParent).find(".airline > .item:eq(1)").html().split("<br>")[1];
+        var _Refund  = $(_MainParent).find(".refund").attr("title");
+        var _FlightType =  $(_MainParent).find(".flighttype").attr("title");
+        var _BookingType = $(_MainParent).find(".airline > .item:eq(2)").text();
+              
+        var jsonData = {
+            "TicketDetails" : [
+               {
+                    "_Referenceno" : _Referenceno,                   
+                    "_PNRNo" :_PNRNo,
+                    "_AirlineID" : _AirlineID,
+                    "_AirlineName" :_AirlineName,
+                    "_Refund" : _Refund,
+                    "_FlightType" : _FlightType,
+                    "_BookingType" :_BookingType  
+                }
+            ]        
+        };
+
+        console.log(jsonData)
+    });  
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $.ajax({  
+//     type: "POST",  
+//     url: "https://localhost:44359/api/values/",  
+//     contentType: "application/json; charset=utf-8", 
+//     data :JSON.stringify(MyValue), 
+//     dataType: "json",  
+//     success: function (data) {  
+//         alert(JSON.stringify(data));                  
+         
+//         console.log(data);  
+//     }, //End of AJAX Success function  
+
+//     failure: function (data) {  
+//         alert(data.responseText); 
+//         console.log(data); 
+//     }, //End of AJAX failure function  
+//     error: function (data) {  
+//         alert(data.responseText);  
+//         console.log(data); 
+//     } //End of AJAX error function  
+
+// });      
