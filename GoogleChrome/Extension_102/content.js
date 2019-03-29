@@ -28,14 +28,7 @@ function createButtonAndAddit_Akbar(){
     btn.type = 'button';
     btn.value = 'Get Data';
     btn.classList.add("statusconfirmed");
-    btn.classList.add("_GetDataBtn");   
-    
-    try{
-       
-    }
-    catch(ex){
-        console.log(ex);
-    }
+    btn.classList.add("_GetDataBtn");       
 }
 
 
@@ -52,9 +45,12 @@ $(document).ready(function() {
             return;
         }
 
+        let jsonData = [];
+
         let _PaxDetailsMainDiv = $(".faredetails > .farecontainer");
-        let _PassengerData = new Array();        
-        let jsonData = new Array();
+
+        let _PassengerData = [];       
+      
        
         /************************************************************************** */
         for (let index = 0; index < _PaxDetailsMainDiv.length; index++) {
@@ -75,8 +71,7 @@ $(document).ready(function() {
     
                 let _Total = $(element).find(".amdt:eq(2)").text().trim();
     
-                let PassengerDetails  = [
-                    {
+                let PassengerDetails  = [{                
                             "_Pax_Name" : _Pax_Name,                   
                             "_Pax_Type" :_Pax_Type,
                             "_Basic_Fare" : _Basic_Fare,
@@ -87,13 +82,13 @@ $(document).ready(function() {
                             "_Discount" :_Discount,
                             "_Bill_Difference" : _Bill_Difference,
     
-                            "_Total" : _Total,
-                        }
-                    ];   
+                            "_Total" : _Total
+                }];                     
     
                     _PassengerData.push(PassengerDetails);   
-            }                    
+            }                               
         }
+
         /************************************************************************** */
 
         /************************************************************************** */
@@ -106,8 +101,8 @@ $(document).ready(function() {
         var _Agent_TDS = $(".fareitemcontainer > .faretypepop:eq(3)").text();
         var _Agent_Your_Cost = $(".fareitemcontainer > .faretypepop:eq(4)").text();
 
-        console.log($(".rightitem > .faredetails").find(".fareitemcontainer"));
-         console.log($(".fareitemcontainer"));
+       // console.log($(".rightitem > .faredetails").find(".fareitemcontainer"));
+        // console.log($(".fareitemcontainer"));
 
         var _AgentData = {
             "_Agent_Airline_Fare" : _Agent_Airline_Fare, 
@@ -177,8 +172,9 @@ $(document).ready(function() {
              let _Duration_Type = _DurationDetails[0].trim();
              let _Duration_Time = _DurationDetails[1].trim();
 
-             let TicketDetails  = [
-                {
+            var TicketDetails  =               
+                [{   
+                        "SiteName" : "Akbar",
                         "_Referenceno" : _Referenceno,                   
                         "_PNRNo" :_PNRNo,
                         "_AirlineID" : _AirlineID,
@@ -198,15 +194,46 @@ $(document).ready(function() {
                         "_Duration_Type" : _Duration_Type,
                         "_Duration_Time" : _Duration_Time,
 
-                        "_PassengerData" : _PassengerData,
+                      //  "_PassengerData" : _PassengerData,
 
                         "_AgentData" : _AgentData
-                    }
-                ];     
+                    }];                    
             jsonData.push(TicketDetails);                
         }
         /************************************************************************** */
-        console.log(jsonData);
+        var TicketDetails = { 'TicketDetails': jsonData };
+        console.log(JSON.stringify(jsonData));
+
+        if(jsonData.length != 0){
+                $.ajax({  
+          
+                    crossDomain: true,
+                    cache: false,
+                    type: "POST",  
+                    url: "https://localhost:44359/api/values/",  
+                    contentType: "application/json",
+                    data :JSON.stringify(TicketDetails), 
+                    dataType: "json",  
+                    success: function (data) {  
+                       // alert(JSON.stringify(jsonData));                  
+                        alert(data);
+                        //console.log(jsonData);  
+                    }, //End of AJAX Success function  
+
+                    failure: function (data) {  
+                        alert(data.responseText); 
+                        console.log(data); 
+                    }, //End of AJAX failure function  
+                    error: function (data) {  
+                        alert(data.responseText);  
+                        console.log(data); 
+                    } //End of AJAX error function  
+
+                });      
+        }
+        else{
+            alert("No Data Found")
+        }
 
     });  
 });

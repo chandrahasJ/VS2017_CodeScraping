@@ -1,0 +1,97 @@
+{
+    "TicketDetails":[
+       [
+          {
+             "SiteName":"Akbar",
+             "_Referenceno":"AO 182233699",
+             "_PNRNo":"IM857R",
+             "_AirlineID":"6E 214",
+             "_AirlineName":"Indigo",
+             "_Refund":"Refundable",
+             "_BookingType":"Economy",
+             "_Departure_Origin":"Chhatrapati Shivaji",
+             "_Departure_Time":"11:20,",
+             "_Departure_Date":"14 Jan'19",
+             "_Arrival_Origin":"Cochin",
+             "_Arrival_Time":"13:20,",
+             "_Arrival_Date":"14 Jan'19",
+             "_Duration_Type":"02H 00M",
+             "_Duration_Time":"Non Stop",
+             "_PassengerData":[
+                [
+                   {
+                      "_Pax_Name":"Mr VARUN CHAUDHARY",
+                      "_Pax_Type":"Adult",
+                      "_Basic_Fare":"11882",
+                      "_TaxAndCharges":"2286",
+                      "_Premium":"0",
+                      "_Mark_Up":"0",
+                      "_Discount":"20",
+                      "_Bill_Difference":"0",
+                      "_Total":"14148"
+                   }
+                ],
+                [
+                   {
+                      "_Pax_Name":"Ms D EVALYN",
+                      "_Pax_Type":"Adult",
+                      "_Basic_Fare":"11882",
+                      "_TaxAndCharges":"2286",
+                      "_Premium":"0",
+                      "_Mark_Up":"0",
+                      "_Discount":"20",
+                      "_Bill_Difference":"0",
+                      "_Total":"14148"
+                   }
+                ],
+                [
+                   {
+                      "_Pax_Name":"Mr RAHUL AGRAWAL",
+                      "_Pax_Type":"Adult",
+                      "_Basic_Fare":"11882",
+                      "_TaxAndCharges":"2286",
+                      "_Premium":"0",
+                      "_Mark_Up":"0",
+                      "_Discount":"20",
+                      "_Bill_Difference":"0",
+                      "_Total":"14148"
+                   }
+                ],
+                [
+                   {
+                      "_Pax_Name":"Mr GAGANDEEP SINGH",
+                      "_Pax_Type":"Adult",
+                      "_Basic_Fare":"11882",
+                      "_TaxAndCharges":"2286",
+                      "_Premium":"0",
+                      "_Mark_Up":"0",
+                      "_Discount":"20",
+                      "_Bill_Difference":"0",
+                      "_Total":"14148"
+                   }
+                ],
+                [
+                   {
+                      "_Pax_Name":"Ms SHWAMITA PRITI",
+                      "_Pax_Type":"Adult",
+                      "_Basic_Fare":"11882",
+                      "_TaxAndCharges":"2286",
+                      "_Premium":"0",
+                      "_Mark_Up":"0",
+                      "_Discount":"20",
+                      "_Bill_Difference":"0",
+                      "_Total":"14148"
+                   }
+                ]
+             ],
+             "_AgentData":{
+                "_Agent_Airline_Fare":" Rs. 59410",
+                "_Agent_Airline_Tax":"Rs. 11430",
+                "_Agent_ATO_Commission":" Rs. 1941",
+                "_Agent_TDS":" Rs. 97",
+                "_Agent_Your_Cost":" Rs. 68996"
+             }
+          }
+       ]
+    ]
+ }
