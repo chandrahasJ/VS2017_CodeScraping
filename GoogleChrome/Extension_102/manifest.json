@@ -12,7 +12,7 @@
       ],
     "content_scripts" : [{
         "matches" : [
-            "https://agents.akbartravelsonline.com/MyAccount/FlightItinerary/*"
+            "https://agents.akbartravelsonline.com/MyAccount/FlightItinerary/*"          
         ],
         "js" : [
             "TPLibs/Jquery3.js",
