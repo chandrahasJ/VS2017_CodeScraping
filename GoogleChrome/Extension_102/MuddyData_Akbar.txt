@@ -1,0 +1,177 @@
+
+
+
+// function createButtonAndAddit(){
+   
+//     var ref = $("#tophf");
+//     var div = document.createElement( 'div' );
+//     var btnForm = document.createElement( 'form' );
+//     var btn = document.createElement( 'input' );    
+
+//     //append all elements
+//     $(ref).after(div);
+//     div.appendChild( btnForm );
+//     btnForm.appendChild( btn );
+
+//     //set attributes for div
+//     div.id = 'myButtonDivID_'+1;
+//     var _position = $(ref).position();
+     
+//     div.style.cssText = "left:"+(_position.left)+"top:"+(_position.top+100)+" position:absolute;z-index:1000000000;"
+//     //div.style.cssText = "position:absolute;z-index:1000000000;"
+//     div.style.backgroundColor = 'black';
+
+//     //set attributes for btnForm
+//     btnForm.action = '';
+
+//     //set attributes for btn  
+//     btn.id ="button_"+1;  
+//     btn.type = 'button';
+//     btn.value = 'Get Data';
+//     btn.classList.add("statusconfirmed");
+//     btn.classList.add("_GetDataBtn");    
+// }
+
+        // //    "https://agents.akbartravelsonline.com/MyAccount/FlightItinerary/*"   "<all_urls>"
+        // function Trails(){   
+        //     var A = [];
+        //     var B = [];
+        //     var myData = [];
+            
+        //     for(var i = 0;i <= 2;i++){
+        //         var _A = {
+        //             "ID" : i,
+        //             "_A" : "A"+i
+        //         };
+        //         A.push(_A);
+        //     }    
+            
+        //     for(var i = 0;i <= 2;i++){
+        //         var _B = {
+        //             "ID" : i,
+        //             "_B" : "B"+i
+        //         };
+        //         B.push(_B);
+        //     }      
+        
+        //     for(var i = 0;i <= 2;i++){
+        //         myData.push({
+        //             "MyDataName" : "CJ"+i,
+        //             "A" : A,
+        //             "B" : B,
+        //         });
+        //     }       
+        
+        //     $.ajax({  
+        //         crossDomain: true,
+        //         cache: false,
+        //         type: "POST",  
+        //         url: "https://localhost:44359/api/values/",  
+        //         contentType: "application/json",
+        //         data :JSON.stringify(myData), 
+        //         dataType: "json",  
+        //         success: function (data) {                      
+        //             alert(data);          
+        //         }, //End of AJAX Success function  
+        //         failure: function (data) {  
+        //             alert(data.responseText); 
+        //             console.log(data); 
+        //         }, //End of AJAX failure function  
+        //         error: function (data) {  
+        //             alert(data.responseText);  
+        //             console.log(data); 
+        //         } //End of AJAX error function  
+        //     });      
+        // }
+        
+
+        // var _MainDiv =  $(".rightitem > .flightdetails");
+        // var _AirlineID =  $(_MainDiv).find('.airline > .item:eq(1)').html().split("<br>")[0].trim();
+        // var _AirlineName =  $(_MainDiv).find(".airline > .item:eq(1)").html().split("<br>")[1].trim();
+        // var _Refund  = $(_MainDiv).find(".refund").attr("title");
+        // var _FlightType =  $(_MainDiv).find(".flighttype").attr("title");
+        // var _BookingType = $(_MainDiv).find(".airline > .item:eq(2)").text().trim();
+        // console.log($(_MainDiv).find(".airline > .item:eq(2)")
+        // console.log(jsonData)
+
+
+    // var _Referenceno = $(".referenceno > strong > a").text();       
+        // var _PNRNo = $(_MainParent).find('.itemheadersub > .mainheadright > .headernav:eq(0)').text().split(":")[3];
+        // var _AirlineID =  $(_MainParent).find('.airline > .item:eq(1)').html().split("<br>")[0];
+        // var _AirlineName =  $(_MainParent).find(".airline > .item:eq(1)").html().split("<br>")[1];
+        // var _Refund  = $(_MainParent).find(".refund").attr("title");
+        // var _FlightType =  $(_MainParent).find(".flighttype").attr("title");
+        // var _BookingType = $(_MainParent).find(".airline > .item:eq(2)").text();
+
+
+
+
+// var _data = $("#"+e.target.id).closest(".flightdetails");
+// var _MainParent = $("#"+e.target.id).parents("div > .rightitem");
+
+// var _Referenceno = $(".referenceno > strong > a").text();       
+// var _PNRNo = $(_MainParent).find('.itemheadersub > .mainheadright > .headernav:eq(0)').text().split("|")[1].split(":")[1];
+// var _AirlineID =  $(_MainParent).find('.airline > .item:eq(1)').html().split("<br>")[0];
+// var _AirlineName =  $(_MainParent).find(".airline > .item:eq(1)").html().split("<br>")[1];
+// var _Refund  = $(_MainParent).find(".refund").attr("title");
+// var _FlightType =  $(_MainParent).find(".flighttype").attr("title");
+// var _BookingType = $(_MainParent).find(".airline > .item:eq(2)").text();
+
+
+// for (let index = 0; index < getflightprintticket.length; index++) {
+//     const element = getflightprintticket[index];
+    
+//     var div = document.createElement( 'div' );
+//     var btnForm = document.createElement( 'form' );
+//     var btn = document.createElement( 'input' );
+
+//     //append all elements
+//     $(element).after(div);
+//     div.appendChild( btnForm );
+//     btnForm.appendChild( btn );
+
+//     //set attributes for div
+//     div.id = 'myButtonDivID_'+index;
+//     var _position = $(element).position();
+     
+//     div.style.cssText = "left:"+(_position.left)+"top:"+(_position.top+100)+" position:absolute;z-index:1000000000;"
+//     //div.style.cssText = "position:absolute;z-index:1000000000;"
+//     div.style.backgroundColor = 'black';
+
+//     //set attributes for btnForm
+//     btnForm.action = '';
+
+//     //set attributes for btn  
+//     btn.id ="button_"+index;  
+//     btn.type = 'button';
+//     btn.value = 'Get Data';
+//     btn.classList.add("statusconfirmed");
+//     btn.classList.add("_GetDataBtn");
+//     //btn.addEventListener("click",);
+    
+// } 
+
+
+
+// $.ajax({  
+//     type: "POST",  
+//     url: "https://localhost:44359/api/values/",  
+//     contentType: "application/json; charset=utf-8", 
+//     data :JSON.stringify(MyValue), 
+//     dataType: "json",  
+//     success: function (data) {  
+//         alert(JSON.stringify(data));                  
+         
+//         console.log(data);  
+//     }, //End of AJAX Success function  
+
+//     failure: function (data) {  
+//         alert(data.responseText); 
+//         console.log(data); 
+//     }, //End of AJAX failure function  
+//     error: function (data) {  
+//         alert(data.responseText);  
+//         console.log(data); 
+//     } //End of AJAX error function  
+
+// });      
