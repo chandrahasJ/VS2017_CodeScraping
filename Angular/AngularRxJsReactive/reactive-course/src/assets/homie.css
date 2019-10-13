@@ -1,0 +1,14 @@
+
+.ccontainer{
+    max-width: 500px;
+    margin:0;
+    text-align: center;
+}
+
+.hoverme{
+    border: 1px solid rebeccapurple;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px auto;
+}
+
