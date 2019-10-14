@@ -1,6 +1,6 @@
 import { Lesson } from './lesson';
 
-export const lessons: Lesson[] = [
+export const testdata: Lesson[] = [
     {
       "id": 0,
       "description": "MICROLUXE - reprehenderit",
