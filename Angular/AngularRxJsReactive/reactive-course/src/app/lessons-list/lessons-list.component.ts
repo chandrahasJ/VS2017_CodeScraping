@@ -26,7 +26,7 @@ export class LessonsListComponent implements OnInit , Observer{
 
   notify(data: Lesson[]) {
     console.log('Lessons List component recived data');
-    this.lessons  = data;
+    this.lessons  = data.slice(0);
   }
 
   toggleLessonViewed(lesson:Lesson){

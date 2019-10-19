@@ -12,14 +12,14 @@ export class EventBusExperimentsComponent implements OnInit {
 
   constructor() { }
 
-  Lessons : Lesson[] = [];
+  private Lessons : Lesson[] = [];
 
   ngOnInit() {
     console.log('Top Level Component broadcasted all lessons....');
     this.Lessons = testdata.slice(0)
     globalEventBus.notifyObserver(LESSONS_LIST_AVAILABLE,  this.Lessons) ;
 
-    setTimeout(() => {
+    setInterval(() => {
         this.Lessons.push({
           id : Math.random(),
           description : 'New Lessons ' +Math.random()
