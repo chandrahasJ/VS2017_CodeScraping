@@ -34,6 +34,7 @@ namespace DatingApp.API
             services.AddMvc(options => {
                 options.EnableEndpointRouting = false;
             }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +51,7 @@ namespace DatingApp.API
             }
 
             // app.UseHttpsRedirection();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
         }
     }
