@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
+using DatingApp.API.Data.IRepository;
+using DatingApp.API.Data.Repository;
 using DatingApp.API.HelperClass;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder; 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace DatingApp.API
 {
@@ -28,7 +33,7 @@ namespace DatingApp.API
         // This method gets called by the runtime. Use this method to add services to the container.  
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IPasswordHelper, PasswordHelper>();
+            
             services.AddDbContext<DataContext>(options => {
                
             });
@@ -36,6 +41,28 @@ namespace DatingApp.API
                 options.EnableEndpointRouting = false;
             }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddCors();
+
+           
+
+            services.AddScoped<IPasswordHelper, PasswordHelper>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
+
+            //Add it in the Header
+            //Key = Authorization
+            //Value = Bearer <Key>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options => {
+                        options.TokenValidationParameters = new TokenValidationParameters(){
+                          ValidateIssuerSigningKey = true,                          
+                          IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(
+                                    Configuration.GetSection("AppSetting:Token").Value
+                                )),
+                          ValidateIssuer = false,
+                          ValidateAudience = false
+                        };
+                });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +80,10 @@ namespace DatingApp.API
 
             // app.UseHttpsRedirection();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
 }
+
+

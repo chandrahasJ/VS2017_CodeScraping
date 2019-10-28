@@ -6,8 +6,8 @@ namespace DatingApp.API.Data.IRepository
     public interface IAuthRepository
     {
         Task<User> Register(User user, string Password);
-        Task<User> Login(User user, string Password);
-        Task<bool> UserExists(User user);
+        Task<User> Login(string user, string Password);
+        Task<bool> UserExists(string user);
     } 
     
 }

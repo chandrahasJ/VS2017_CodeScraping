@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -28,6 +30,7 @@ namespace DatingApp.API.Controllers
         }
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
@@ -57,3 +60,5 @@ namespace DatingApp.API.Controllers
         }
     }
 }
+
+//Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJjaGFuZHJhaGFzIiwibmJmIjoxNTcyMjU4NDg3LCJleHAiOjE1NzIzNDQ4ODcsImlhdCI6MTU3MjI1ODQ4N30.XECRITrbfkk0I9-nSZ0UCpDD8BOj1oBVeiZpCsV_yG5S9594IiQS4nGRPgRW-b7HUbHFNtMmFpHJY5MjKh4ohQ

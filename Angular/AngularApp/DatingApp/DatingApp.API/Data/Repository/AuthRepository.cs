@@ -21,16 +21,15 @@ namespace DatingApp.API.Data.Repository
             var userData = await dataContext.Users.FirstOrDefaultAsync(x => x.UserName == UserName);
             if(userData == null) return null;
 
-            byte[] PasswordHash  = userData.PasswordHash;
-            byte[] PasswordSalt = userData.PasswordSalt;
-            var isVerfied = this.passwordHelper.VerifyPasswordHash(
-                Password,
-                out PasswordHash,
-                out PasswordSalt
-            );
 
-            if(!isVerfied) return null;            
-             
+            if(!passwordHelper.VerifyPasswordHash(Password ,
+                userData.PasswordHash,
+                userData.PasswordSalt
+                )) 
+            {
+                return null;   
+            }         
+            
             return userData;
         }
 
